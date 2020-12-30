@@ -17,6 +17,7 @@
     "@redwoodjs/forms": "^0.21.0",
     "@redwoodjs/router": "^0.21.0",
     "@redwoodjs/web": "^0.21.0",
+    "graphql-hooks": "^5.0.0",
     "netlify-identity-widget": "^1.9.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
