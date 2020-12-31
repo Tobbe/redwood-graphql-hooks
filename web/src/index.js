@@ -32,7 +32,7 @@ const useMutationAdapter = (query, options) => {
   return useMutation(print(query), options)
 }
 
-const GraphqlHooksProvider = ({ children }) => {
+const GraphqlHooksClientProvider = ({ children }) => {
   const { uri: url, headers } = useFetchConfig()
 
   const client = new GraphQLClient({ url, headers })
@@ -46,7 +46,7 @@ ReactDOM.render(
   <FatalErrorBoundary page={FatalErrorPage}>
     <AuthProvider client={netlifyIdentity} type="netlify">
       <FetchConfigProvider>
-        <GraphqlHooksProvider>
+        <GraphqlHooksClientProvider>
           <GraphQLHooksProvider
             useQuery={useQueryAdapter}
             useMutation={useMutationAdapter}
@@ -55,7 +55,7 @@ ReactDOM.render(
               <Routes />
             </FlashProvider>
           </GraphQLHooksProvider>
-        </GraphqlHooksProvider>
+        </GraphqlHooksClientProvider>
       </FetchConfigProvider>
     </AuthProvider>
   </FatalErrorBoundary>,
